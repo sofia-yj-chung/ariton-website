@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariton Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1C3022;
+  --green-mid:#2A4430;
+  --gold:#A8843C;
+  --gold-light:#C9A55A;
+  --cream:#F8F6F0;
+  --cream-dark:#F0EDE4;
+  --ink:#1C2B1E;
+  --ink-60:rgba(28,43,30,0.6);
+  --ink-35:rgba(28,43,30,0.35);
+  --ink-15:rgba(28,43,30,0.12);
+  --rule:rgba(28,43,30,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);}
+
+/* ── NAV ─────────────────────────────────────────── */
+.nav{background:var(--cream);border-bottom:1px solid var(--rule);padding:0 56px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.16em;color:var(--green);text-decoration:none;}
+.nav-logo em{color:var(--gold);font-style:normal;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1.5px solid var(--green);padding:9px 22px;text-decoration:none;transition:background .2s,color .2s;}
+.nav-cta:hover{background:var(--green);color:#fff;}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{background:var(--cream);padding:96px 56px 0;border-bottom:1px solid var(--rule);}
+.hero-inner{max-width:1200px;margin:0 auto;}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.hero-layout{display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:end;padding-bottom:64px;border-bottom:1px solid var(--rule);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:108px;line-height:.86;letter-spacing:.01em;color:var(--green);}
+.hero-h1 .gold{color:var(--gold);}
+.hero-right-col{padding-bottom:8px;}
+.hero-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--ink-60);margin-bottom:32px;}
+.hero-cta-row{display:flex;flex-direction:column;gap:10px;}
+.btn-primary{background:var(--green);color:#fff;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:15px 28px;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:background .2s;}
+.btn-primary:hover{background:var(--green-mid);}
+.btn-secondary{background:transparent;border:1px solid var(--rule);color:var(--ink-60);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 28px;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:border-color .2s,color .2s;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.hstat{padding:28px 0;border-right:1px solid var(--rule);}
+.hstat:first-child{padding-left:0;}
+.hstat:last-child{border-right:none;}
+.hstat-n{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--green);line-height:1;margin-bottom:4px;}
+.hstat-l{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-35);}
+
+/* ── SECTION LABELS ───────────────────────────────── */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+
+/* ── EDITORIAL INTRO ──────────────────────────────── */
+.intro{padding:80px 56px;border-bottom:1px solid var(--rule);}
+.intro-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.intro-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);}
+.intro-title .gold{color:var(--gold);}
+.intro-body{font-family:'DM Serif Display',serif;font-style:italic;font-size:19px;line-height:1.7;color:var(--ink-60);margin-bottom:24px;}
+.intro-body-small{font-size:14px;line-height:1.85;color:var(--ink-60);}
+
+/* ── PROGRAMS (editorial card grid) ──────────────── */
+.programs{padding:80px 56px;background:var(--cream-dark);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.programs-inner{max-width:1200px;margin:0 auto;}
+.programs-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--rule);}
+.programs-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);}
+.programs-intro{font-size:15px;line-height:1.8;color:var(--ink-60);max-width:440px;}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.pcard{background:var(--cream-dark);padding:40px 36px;transition:background .2s;}
+.pcard:hover{background:var(--cream);}
+.pcard-num{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:20px;}
+.pcard-title{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2;color:var(--green);margin-bottom:14px;}
+.pcard-rule{width:32px;height:1px;background:var(--gold);margin-bottom:16px;}
+.pcard-body{font-size:13.5px;line-height:1.8;color:var(--ink-60);margin-bottom:20px;}
+.pcard-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.pcard-list li{font-size:12px;color:var(--ink-35);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.pcard-list li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:1px;}
+
+/* ── PASSION PROJECTS ─────────────────────────────── */
+.projects{padding:80px 0;border-bottom:1px solid var(--rule);background:var(--cream-dark);}
+.projects-inner{max-width:1200px;margin:0 auto;padding:0 56px;}
+.projects-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--rule);}
+.projects-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);}
+.projects-intro{font-size:15px;line-height:1.8;color:var(--ink-60);}
+
+/* catalogue ensemble — TSOL-style */
+.ensemble{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--rule);border:1px solid var(--rule);margin-bottom:2px;}
+.ens-card{background:var(--cream);display:flex;flex-direction:column;text-decoration:none;transition:background .25s;border-right:1px solid var(--rule);}
+.ens-card:last-child{border-right:none;}
+.ens-card:hover{background:#fff;}
+.ens-card:hover .ens-arrow{transform:translateX(4px);}
+.ens-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--green-mid);position:relative;flex-shrink:0;}
+.ens-img-fill{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.ens-img-letter{font-family:'Bebas Neue',sans-serif;font-size:160px;color:rgba(255,255,255,0.06);line-height:1;user-select:none;}
+.ens-img-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(184,150,62,0.04) 20px,rgba(184,150,62,0.04) 21px);}
+.ens-img-tag{position:absolute;bottom:16px;left:16px;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);background:rgba(28,48,34,0.7);padding:4px 10px;backdrop-filter:blur(4px);}
+.ens-img-tint-1{background:linear-gradient(135deg,#1C3022 0%,#2A4430 50%,#1e3828 100%);}
+.ens-img-tint-2{background:linear-gradient(135deg,#2A3820 0%,#1C3022 50%,#243318 100%);}
+.ens-img-tint-3{background:linear-gradient(135deg,#1a2e28 0%,#243830 50%,#1C3022 100%);}
+.ens-body{padding:28px 28px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.ens-category{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.ens-title{font-family:'DM Serif Display',serif;font-size:19px;line-height:1.25;color:var(--green);}
+.ens-summary{font-size:13px;line-height:1.75;color:var(--ink-60);}
+.ens-divider{width:100%;height:1px;background:var(--rule);margin:4px 0;}
+.ens-steps{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:4px;}
+.ens-steps li{font-size:12px;line-height:1.55;color:var(--ink-35);display:flex;align-items:flex-start;gap:8px;}
+.ens-steps li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px;}
+.ens-footer{padding:0 28px 24px;display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.ens-link{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+.ens-arrow{display:inline-block;transition:transform .2s;margin-left:4px;}
+
+/* wide featured card */
+.ens-wide{grid-column:span 2;}
+.ens-wide .ens-img{aspect-ratio:16/7;}
+.ens-wide .ens-title{font-size:24px;}
+
+/* ensemble footer — CTA strip */
+.ensemble-cta{background:var(--green);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid var(--green);border-top:none;margin-bottom:48px;}
+.ensemble-cta-copy{display:flex;flex-direction:column;gap:4px;}
+.ensemble-cta-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+.ensemble-cta-text{font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.7);}
+.ensemble-cta-btn{background:var(--gold);color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;text-decoration:none;white-space:nowrap;transition:background .2s;flex-shrink:0;}
+.ensemble-cta-btn:hover{background:var(--gold-light);}
+
+/* ethics */
+.projects-ethics{background:var(--green);padding:48px 56px;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;}
+.ethics-label{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.9;color:#fff;}
+.ethics-label em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold-light);}
+.ethics-items{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.ethics-item-title{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;}
+.ethics-item-body{font-size:13px;line-height:1.75;color:rgba(255,255,255,0.55);}
+
+/* ── HOW WE WORK ──────────────────────────────────── */
+.how{padding:80px 56px;background:var(--cream-dark);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.how-inner{max-width:1200px;margin:0 auto;}
+.how-header{margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+.how-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);}
+.how-sub{font-size:15px;line-height:1.8;color:var(--ink-60);}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.step{background:var(--cream-dark);padding:40px 36px;}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(168,132,60,0.18);line-height:1;margin-bottom:20px;}
+.step-title{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.2;color:var(--green);margin-bottom:12px;}
+.step-rule{width:28px;height:1px;background:var(--gold);margin-bottom:14px;}
+.step-body{font-size:13.5px;line-height:1.8;color:var(--ink-60);}
+
+/* ── DIFFERENCE ───────────────────────────────────── */
+.difference{padding:80px 56px;border-bottom:1px solid var(--rule);}
+.difference-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.diff-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);margin-bottom:20px;}
+.diff-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;line-height:1.6;color:var(--ink-60);}
+.diff-items{display:flex;flex-direction:column;}
+.diff-item{padding:24px 0;border-bottom:1px solid var(--rule);}
+.diff-item:first-child{border-top:1px solid var(--rule);}
+.diff-item-title{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.diff-item-body{font-size:13.5px;line-height:1.8;color:var(--ink-60);}
+
+/* ── TESTIMONIALS ─────────────────────────────────── */
+.testi{padding:80px 56px;background:var(--cream-dark);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.testi-inner{max-width:1200px;margin:0 auto;}
+.testi-header{margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--rule);}
+.testi-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:var(--green);}
+.testi-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.tcard{background:var(--cream-dark);padding:40px 36px;}
+.tquote{font-family:'DM Serif Display',serif;font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-60);margin-bottom:24px;}
+.tquote::before{content:'\201C';font-size:40px;line-height:1;color:var(--gold);opacity:.4;display:block;margin-bottom:8px;}
+.tauthor{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);}
+.trole{font-size:12px;color:var(--ink-35);margin-top:4px;}
+
+/* ── FAQ ──────────────────────────────────────────── */
+.faq{padding:80px 56px;border-bottom:1px solid var(--rule);}
+.faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;}
+.faq-title{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.88;color:var(--green);margin-bottom:20px;}
+.faq-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;line-height:1.65;color:var(--ink-60);margin-bottom:36px;}
+.faq-list{}
+.faq-item{border-bottom:1px solid var(--rule);cursor:pointer;}
+.faq-item:first-child{border-top:1px solid var(--rule);}
+.faq-q{padding:20px 0;font-size:14px;font-weight:500;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:16px;user-select:none;}
+.faq-icon{color:var(--gold);font-size:20px;line-height:1;flex-shrink:0;transition:transform .25s;}
+.faq-a{font-size:13.5px;line-height:1.8;color:var(--ink-60);padding-bottom:20px;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ── BOTTOM CTA ───────────────────────────────────── */
+.bcta{background:var(--green);padding:96px 56px;}
+.bcta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.bcta-title{font-family:'Bebas Neue',sans-serif;font-size:88px;line-height:.86;color:#fff;}
+.bcta-title .gold{color:var(--gold-light);}
+.bcta-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.5);margin-top:16px;line-height:1.6;}
+.bcta-right{display:flex;flex-direction:column;gap:12px;}
+.bcta-btn{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,border-color .2s;}
+.bcta-btn-g{background:var(--gold);color:#fff;}
+.bcta-btn-g:hover{background:var(--gold-light);}
+.bcta-btn-d{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);}
+.bcta-btn-d:hover{border-color:rgba(255,255,255,0.35);color:rgba(255,255,255,0.75);}
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer{background:var(--green);border-top:1px solid rgba(255,255,255,0.08);padding:32px 56px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.14em;color:rgba(255,255,255,0.35);}
+.footer-logo em{color:var(--gold);font-style:normal;}
+.footer-links{display:flex;gap:24px;list-style:none;}
+.footer-links a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold-light);}
+.footer-contact{display:flex;gap:20px;}
+.footer-contact a{font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;}
+.footer-contact a:hover{color:var(--gold-light);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.15);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo">ARITON <em>CONSULTING</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/school">School</a></li>
+  </ul>
+  <a href="https://calendly.com/sofia-ceo-ariton-edu/ariton-parent-student-call" class="nav-cta">Free Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Seoul · Singapore · London</div>
+    <div class="hero-layout">
+      <div class="hero-h1">
+        FOR THE<br>
+        STUDENTS<br>
+        WHO AIM<br>
+        <span class="gold">HIGHER.</span>
+      </div>
+      <div class="hero-right-col">
+        <p class="hero-sub">Build your competitive edge with elite educators from Ivy League and Oxbridge.</p>
+        <div class="hero-cta-row">
+          <a href="https://calendly.com/sofia-ceo-ariton-edu/ariton-parent-student-call" class="btn-primary">Free Consultation <span>→</span></a>
+          <a href="#programs" class="btn-secondary">Our Programs <span>↓</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">98%</div><div class="hstat-l">Target Achievement</div></div>
+      <div class="hstat"><div class="hstat-n">7+</div><div class="hstat-l">Years of Excellence</div></div>
+      <div class="hstat"><div class="hstat-n">Top 5</div><div class="hstat-l">University Placements</div></div>
+      <div class="hstat"><div class="hstat-n">1:1</div><div class="hstat-l">Expert Mentorship</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL INTRO -->
+<section class="intro" id="about">
+  <div class="intro-inner">
+    <div>
+      <div class="eyebrow">Our philosophy</div>
+      <div class="intro-title">THE ARITON<br><span class="gold">DIFFERENCE.</span></div>
+    </div>
+    <div>
+      <p class="intro-body">Ariton was born from a belief that genuine mentorship changes outcomes — not just application scores.</p>
+      <p class="intro-body-small">You work directly with Ivy League and Oxbridge graduates who have real-world experience beyond academia: in management consulting, investment banking, research, and entrepreneurship. Every strategy is personally designed and overseen by Sofia — an Oxford PPE graduate and former management consultant — not matched through a platform or delegated to a generalist.</p>
+      <br>
+      <p class="intro-body-small">We appreciate that life does not end with a college offer. Our goal is to shape students into well-rounded thinkers who are capable of becoming leaders — in whatever they choose to pursue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="programs-inner">
+    <div class="programs-header">
+      <div>
+        <div class="eyebrow">Our programs</div>
+        <div class="programs-title">BUILD YOUR<br>PORTFOLIO<br>WITH ARITON.</div>
+      </div>
+      <p class="programs-intro">Comprehensive, high-touch consulting across the full admissions and academic competition pipeline. From long-term profile strategy to final submission — every engagement is tailored, rigorous, and personally overseen.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="pcard">
+        <div class="pcard-num">01 — ADMISSIONS</div>
+        <div class="pcard-title">US &amp; UK College Admissions</div>
+        <div class="pcard-rule"></div>
+        <p class="pcard-body">Comprehensive guidance for US (EA/ED/RD) and UK UCAS applications — from strategy design to essay development and final review.</p>
+        <ul class="pcard-list">
+          <li>School list and application strategy</li>
+          <li>Essay ideation, development, and review</li>
+          <li>Activities list and narrative framing</li>
+          <li>Interview coaching and preparation</li>
+          <li>Oxbridge personal statement &amp; written work</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <div class="pcard-num">02 — PORTFOLIO</div>
+        <div class="pcard-title">Resume &amp; Project Portfolio Building</div>
+        <div class="pcard-rule"></div>
+        <p class="pcard-body">Ariton helps students identify and execute their unique "spike" — the differentiating thread that makes an application genuinely stand out from the crowd.</p>
+        <ul class="pcard-list">
+          <li>Passion project ideation and scoping</li>
+          <li>Independent research guidance</li>
+          <li>Portfolio and extracurricular strategy</li>
+          <li>Long-term profile building from Year 9</li>
+          <li>Project report and college essay integration</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <div class="pcard-num">03 — RESEARCH</div>
+        <div class="pcard-title">Competitions &amp; Research Mentorship</div>
+        <div class="pcard-rule"></div>
+        <p class="pcard-body">From ideation to execution — we mentor students through humanities and STEM competitions and academic recognition pathways at the national and international level.</p>
+        <ul class="pcard-list">
+          <li>Competition strategy and selection</li>
+          <li>Research paper structure and coaching</li>
+          <li>National and international competition prep</li>
+          <li>Publication and recognition roadmaps</li>
+          <li>Review by subject-specialist consultants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSION PROJECTS -->
+<section class="projects" id="projects">
+  <div class="projects-inner">
+    <div class="projects-header">
+      <div>
+        <div class="eyebrow">Case studies</div>
+        <div class="projects-title">PASSION<br>PROJECTS<br>THAT WORKED.</div>
+      </div>
+      <p class="projects-intro">A Passion Project is about more than a good story. It demonstrates that you are not only academically excellent, but that you care to make a real contribution to the world — your community, your society, or a cause you hold dear. These are some of ours.</p>
+    </div>
+    <!-- ENSEMBLE CATALOGUE -->
+    <div class="ensemble">
+
+      <!-- Card 1: NFTs — wide featured -->
+      <a href="https://www.ariton-consulting.com/spike-case-studies/nfts-for-good" class="ens-card ens-wide">
+        <div class="ens-img ens-img-tint-1">
+          <div class="ens-img-fill">
+            <div class="ens-img-letter">N</div>
+          </div>
+          <div class="ens-img-pattern"></div>
+          <div class="ens-img-tag">Activism · Technology</div>
+        </div>
+        <div class="ens-body">
+          <div class="ens-category">Social Impact</div>
+          <div class="ens-title">Fundraising with NFTs to Save the Planet</div>
+          <p class="ens-summary">Passionate about ocean pollution near Japan, this student channelled his concern into action — partnering with an environmental NGO and raising funds through a collection of personally designed, AI-generated NFTs. The project combined technology, design, advocacy, and entrepreneurship into a single compelling narrative.</p>
+          <div class="ens-divider"></div>
+          <ul class="ens-steps">
+            <li>Narrowed a broad passion for the environment into a specific, fundable cause</li>
+            <li>Identified the right NGO partner for maximum credibility and impact</li>
+            <li>Trained in AI art generation, NFT creation, and digital trading</li>
+            <li>Built a project website to spread the word and collect donations</li>
+          </ul>
+        </div>
+        <div class="ens-footer">
+          <span class="ens-link">Read case study <span class="ens-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Card 2: Economy of Laos -->
+      <a href="https://www.ariton-consulting.com/spike-case-studies/economy-of-laos" class="ens-card">
+        <div class="ens-img ens-img-tint-2">
+          <div class="ens-img-fill">
+            <div class="ens-img-letter">E</div>
+          </div>
+          <div class="ens-img-pattern"></div>
+          <div class="ens-img-tag">Academic Research</div>
+        </div>
+        <div class="ens-body">
+          <div class="ens-category">Economics · Data Analysis</div>
+          <div class="ens-title">Dissecting Economic Growth Patterns</div>
+          <p class="ens-summary">Fascinated by his home country's rise as a regional manufacturing hub, this student produced a rigorous independent research paper — analysing economic growth through data, expert interviews, and original modelling. It became the centrepiece of his university application.</p>
+          <div class="ens-divider"></div>
+          <ul class="ens-steps">
+            <li>Identified reliable data sources and appropriate economic metrics</li>
+            <li>Trained in Excel-based data analysis and visualisation</li>
+            <li>Developed website to present findings publicly</li>
+          </ul>
+        </div>
+        <div class="ens-footer">
+          <span class="ens-link">Read case study <span class="ens-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Card 3: Electrifying Burma -->
+      <a href="https://www.ariton-consulting.com/spike-case-studies/spike-electrifying-burma" class="ens-card">
+        <div class="ens-img ens-img-tint-3">
+          <div class="ens-img-fill">
+            <div class="ens-img-letter">E</div>
+          </div>
+          <div class="ens-img-pattern"></div>
+          <div class="ens-img-tag">Social Impact · Engineering</div>
+        </div>
+        <div class="ens-body">
+          <div class="ens-category">Community Infrastructure</div>
+          <div class="ens-title">Electrifying a Rural School in Southeast Asia</div>
+          <p class="ens-summary">Acutely aware of the dangers of unsafe electrical infrastructure in his community, this student designed and delivered a practical solution — installing circuit breakers in a rural primary school, coordinating with local officials and a private electricity company from start to finish.</p>
+          <div class="ens-divider"></div>
+          <ul class="ens-steps">
+            <li>Conducted expert interviews with government officials and industry executives</li>
+            <li>Managed multi-stakeholder coordination independently</li>
+            <li>Compiled a full project report integrated into his university application</li>
+          </ul>
+        </div>
+        <div class="ens-footer">
+          <span class="ens-link">Read case study <span class="ens-arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- CTA strip below ensemble -->
+    <div class="ensemble-cta">
+      <div class="ensemble-cta-copy">
+        <div class="ensemble-cta-label">What will you build?</div>
+        <div class="ensemble-cta-text">Every student has a project in them. We help you find it, shape it, and execute it.</div>
+      </div>
+      <a href="https://calendly.com/sofia-ceo-ariton-edu/ariton-parent-student-call" class="ensemble-cta-btn">Start a conversation →</a>
+    </div>
+
+    <!-- ETHICS STATEMENT -->
+    <div class="projects-ethics">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-light);">Our commitment</div>
+        <div class="ethics-label">OUR <em>ETHICS</em><br>STATEMENT.</div>
+      </div>
+      <div class="ethics-items">
+        <div>
+          <div class="ethics-item-title">Your work is always your own</div>
+          <p class="ethics-item-body">We never complete work on behalf of our students. We suggest, proofread, and help refine — but we never write what should be written by you.</p>
+        </div>
+        <div>
+          <div class="ethics-item-title">We spare no effort</div>
+          <p class="ethics-item-body">Your work goes through as many rounds of feedback as needed. We will do everything possible to make it outstanding and maximise your chances.</p>
+        </div>
+        <div>
+          <div class="ethics-item-title">We hold ourselves to the same standard</div>
+          <p class="ethics-item-body">We work hard and expect the same from our students. We don't slack and value efficient, direct communication at every stage.</p>
+        </div>
+        <div>
+          <div class="ethics-item-title">Multiple expert reviews, always</div>
+          <p class="ethics-item-body">Your work is assessed by at least three consultants — including Sofia personally and one subject-area expert with a PhD or equivalent professional standing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how" id="process">
+  <div class="how-inner">
+    <div class="how-header">
+      <div>
+        <div class="eyebrow">How we work</div>
+        <div class="how-title">THE PROCESS.</div>
+      </div>
+      <p class="how-sub">You will work on your project and application for months — in some cases, years. We structure that time to make it purposeful, manageable, and effective, in parallel with your exams and school activities.</p>
+    </div>
+    <div class="how-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Topic &amp; Format Selection</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Work with Ariton consultants to identify the right project for you — at the intersection of your interests, your long-term goals, and a cause or question that is worth pursuing.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Strategy &amp; Planning</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Whether you are publishing research, raising funds, building a community, or launching an initiative — we structure a long-term plan that fits your academic calendar and commitments.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Execution &amp; Mentorship</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Our consultants bring extensive project management, research, and entrepreneurship experience. We guide every step, keep you on track, and review every milestone.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Managing Parallel Commitments</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Ariton consultants make sure you are on top of all tasks involved — so you complete your project and applications without letting either fall short.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-title">Essay &amp; Portfolio Integration</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Upon completion, we ensure your achievements and reflections are captured in your college application — from Passion Project reports to Common App and UCAS essays.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <div class="step-title">Final Review &amp; Submission</div>
+        <div class="step-rule"></div>
+        <p class="step-body">Every application is reviewed by Sofia and at least two additional consultants before submission. Then interview coaching, waitlist strategy, and decision guidance until the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference" id="about">
+  <div class="difference-inner">
+    <div>
+      <div class="eyebrow">Why Ariton</div>
+      <div class="diff-title">WHAT SETS<br>US APART.</div>
+      <p class="diff-sub">These are not marketing claims. They are the principles we built Ariton on, and the standards we hold every engagement to.</p>
+    </div>
+    <div class="diff-items">
+      <div class="diff-item">
+        <div class="diff-item-title">Ivy League &amp; Oxbridge educators — only</div>
+        <p class="diff-item-body">You work directly with graduates of these institutions, each with the mentoring, consulting, or academic experience necessary to add real value. Not platform contractors. Not generalists.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-item-title">Extensive real-world experience beyond academia</div>
+        <p class="diff-item-body">Our consultants have built companies, published research, and advised global firms. They guide students through complex projects because they have run complex projects themselves.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-item-title">Both strategy and execution — under one roof</div>
+        <p class="diff-item-body">With Ariton, you receive admissions strategy consulting and hands-on execution support for your projects and competitions. You do not need to find separate tutors, coaches, and consultants.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-item-title">A long-term philosophy of genuine growth</div>
+        <p class="diff-item-body">We do not build application machines. We build thinkers — students who leave Ariton more capable, more confident, and more ready for whatever comes after the offer letter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="results">
+  <div class="testi-inner">
+    <div class="testi-header">
+      <div class="eyebrow">Student results</div>
+      <div class="testi-title">What <em>they</em> say.</div>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard">
+        <div class="tquote">My child was accepted to all of the universities he applied to, including Oxford in the UK. He also received a half scholarship to Emory University.</div>
+        <div class="tauthor">Parent of C.</div>
+        <div class="trole">Offers from Oxford, Emory, Pomona, U Michigan</div>
+      </div>
+      <div class="tcard">
+        <div class="tquote">Thanks to Ariton's close guidance, I was able to wait for my results confidently — knowing that I had submitted the best application possible. Offers started arriving within a month.</div>
+        <div class="tauthor">S.Y.</div>
+        <div class="trole">Offers from UCLA, Imperial, St Andrews</div>
+      </div>
+      <div class="tcard">
+        <div class="tquote">Ariton knows the right strategy for both UK and US universities — and tailored everything to my child's unique characteristics. The results across all three countries exceeded our expectations.</div>
+        <div class="tauthor">Parent of S.</div>
+        <div class="trole">Offers from UCLA, Imperial, UC Irvine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div>
+      <div class="eyebrow">FAQ</div>
+      <div class="faq-title">FREQUENTLY<br>ASKED.</div>
+      <p class="faq-sub">If you cannot find what you are looking for here, schedule a free consultation and we will walk through your situation directly.</p>
+      <a href="https://calendly.com/sofia-ceo-ariton-edu/ariton-parent-student-call" class="btn-primary" style="display:inline-flex;gap:24px;">Book a free call <span>→</span></a>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">When should I start preparing for university applications? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We suggest Year 9 or 10, but even Year 11 is not too late. If you are unsure, get in touch and let's discuss your situation — we will work out a long-term strategy to get you to your dream university.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">There is so much to do — where do I even start? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Start with a free consultation. We will assess your current profile, academic standing, and goals — and give you a clear picture of exactly what to prioritise and in what order. You will leave with a concrete direction.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Which universities does Ariton specialise in? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We specialise in the most selective institutions in the US and UK — Ivy League, Oxbridge, UCL, LSE, Imperial, and top liberal arts colleges. Sofia has direct, first-hand experience of both systems, and all mentors hold degrees from these institutions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I am already going into Year 12 — is it too late? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No. Year 12 is still a strong starting point for US applications. For UK applications, earlier is always better — but we have successfully supported Year 12 students for Oxbridge entry. Get in touch and we will tell you honestly what is achievable.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does Ariton approach Passion Projects? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We guide students through every stage: topic selection, format, long-term project strategy, execution, and ultimately integration into the college application portfolio. Crucially, your work is always your own — we advise, review, and challenge, but we never write for you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you work with international students? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. We serve students in Korea, Singapore, and internationally. Sessions are conducted online or in person at our Seoul and Singapore locations. Our London network supports UK-based students.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bcta">
+  <div class="bcta-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-light);">Start here</div>
+      <div class="bcta-title">YOUR<br>NEXT<br><span class="gold">MOVE.</span></div>
+      <p class="bcta-sub">Not sure where to begin? We will map out the right strategy for your profile in a free 30-minute consultation.</p>
+    </div>
+    <div class="bcta-right">
+      <a href="https://calendly.com/sofia-ceo-ariton-edu/ariton-parent-student-call" class="bcta-btn bcta-btn-g">Book Your Free Consultation <span>→</span></a>
+      <a href="https://wa.me/821089745005" class="bcta-btn bcta-btn-d">WhatsApp Us <span>↗</span></a>
+      <a href="mailto:admin@ariton-edu.com" class="bcta-btn bcta-btn-d">admin@ariton-edu.com <span>→</span></a>
+      <a href="https://pf.kakao.com/_Ubxaxis" class="bcta-btn bcta-btn-d">KakaoTalk Channel <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">ARITON <em>CONSULTING</em></div>
+  <ul class="footer-links">
+    <li><a href="/">Ariton EDU</a></li>
+    <li><a href="/school">Ariton School</a></li>
+    <li><a href="/consulting#projects">Projects</a></li>
+  </ul>
+  <div class="footer-contact">
+    <a href="tel:+82220881227">+82 (2) 2088-1227</a>
+    <a href="mailto:admin@ariton-edu.com">admin@ariton-edu.com</a>
+  </div>
+  <p class="footer-copy">© 2025 Ariton Consulting · Seoul · Singapore · London</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

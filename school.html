@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariton School — IPO Preparation</title>
+<meta name="description" content="Expert preparation for the International Philosophy Olympiad. Live online classes with an Oxford-trained philosopher. Max 6 students. Cohort 1 now open.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#1C2333;color:#F0EEE8;width:100%;}
+
+/* NAV */
+.nav{background:#161E2E;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,169,110,0.18);}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:#F0EEE8;text-decoration:none;}
+.nav-logo span{color:#C9A96E;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,238,232,0.35);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:#C9A96E;}
+.nav-cta{background:#C9A96E;color:#161E2E;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:9px 18px;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:#B8924F;}
+
+/* HERO */
+.hero{background:#1C2333;padding:80px 32px 64px;position:relative;overflow:hidden;border-bottom:1px solid rgba(201,169,110,0.1);}
+.hero-bg{font-family:'Bebas Neue',sans-serif;font-size:300px;line-height:1;color:rgba(201,169,110,0.04);position:absolute;top:-40px;right:-30px;pointer-events:none;user-select:none;letter-spacing:-.02em;}
+.hero-tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#C9A96E;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:#C9A96E;flex-shrink:0;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:.88;letter-spacing:.01em;color:#F0EEE8;margin-bottom:8px;}
+.hero-h1 .gold{color:#C9A96E;}
+.hero-h2{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;letter-spacing:.02em;color:rgba(240,238,232,0.3);margin-bottom:24px;}
+.hero-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;color:rgba(240,238,232,0.5);max-width:480px;margin-bottom:40px;line-height:1.65;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-primary{background:#C9A96E;color:#161E2E;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:background .2s;}
+.btn-primary:hover{background:#B8924F;}
+.btn-outline{background:transparent;border:1px solid rgba(201,169,110,0.4);color:#C9A96E;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-block;cursor:pointer;transition:border-color .2s;}
+.btn-outline:hover{border-color:#C9A96E;}
+
+/* STATS ROW */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(201,169,110,0.1);}
+.stat{padding:28px 24px;border-right:1px solid rgba(201,169,110,0.1);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C9A96E;margin-bottom:4px;}
+.stat-l{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,238,232,0.3);}
+
+/* SECTION LABEL */
+.slabel{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#C9A96E;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.slabel::before{content:'';display:block;width:24px;height:1px;background:#C9A96E;flex-shrink:0;}
+
+/* ABOUT SECTION */
+.about{padding:64px 32px;background:#222B3E;border-bottom:1px solid rgba(201,169,110,0.08);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.about-title{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.92;color:#F0EEE8;margin-bottom:16px;}
+.about-title em{font-family:'DM Serif Display',serif;font-style:italic;color:#C9A96E;}
+.about-body{font-size:14px;line-height:1.8;color:rgba(240,238,232,0.5);}
+.about-body p+p{margin-top:14px;}
+.about-right{}
+.about-quote{font-family:'DM Serif Display',serif;font-style:italic;font-size:20px;line-height:1.55;color:rgba(240,238,232,0.7);border-left:2px solid #C9A96E;padding-left:24px;margin-bottom:24px;}
+.about-detail-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(201,169,110,0.1);font-size:13px;}
+.about-detail-row:last-child{border-bottom:none;}
+.about-detail-lbl{color:rgba(240,238,232,0.35);letter-spacing:.04em;}
+.about-detail-val{font-weight:600;color:#F0EEE8;}
+.about-detail-val.accent{color:#C9A96E;}
+
+/* PILLARS / CURRICULUM */
+.curriculum{padding:64px 32px;background:#1C2333;}
+.curriculum-header{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:2px;}
+.curriculum-title{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.92;color:#F0EEE8;}
+.curriculum-intro{font-size:14px;line-height:1.75;color:rgba(240,238,232,0.45);padding-bottom:8px;}
+.sessions-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px;}
+.session{background:#222B3E;padding:24px 20px;border-top:2px solid rgba(201,169,110,0.1);transition:border-top-color .2s;}
+.session:hover{border-top-color:#C9A96E;}
+.session-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:rgba(201,169,110,0.12);line-height:1;margin-bottom:14px;}
+.session-title{font-size:13px;font-weight:500;color:#F0EEE8;margin-bottom:6px;line-height:1.35;}
+.session-desc{font-size:12px;line-height:1.65;color:rgba(240,238,232,0.38);}
+
+/* ENROL BAND */
+.enrol-band{background:#C9A96E;padding:56px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.enrol-band-left .slabel{color:rgba(22,30,46,0.6);}
+.enrol-band-left .slabel::before{background:rgba(22,30,46,0.4);}
+.enrol-title{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.88;color:#161E2E;margin-bottom:10px;}
+.enrol-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;color:rgba(22,30,46,0.65);line-height:1.55;margin-bottom:24px;}
+.enrol-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.enrol-list li{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(22,30,46,0.75);display:flex;align-items:center;gap:8px;}
+.enrol-list li::before{content:'';display:block;width:14px;height:1px;background:rgba(22,30,46,0.4);flex-shrink:0;}
+.enrol-band-right{}
+.enrol-price-block{border-top:1px solid rgba(22,30,46,0.15);border-bottom:1px solid rgba(22,30,46,0.15);padding:20px 0;margin-bottom:20px;}
+.enrol-price{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;color:#161E2E;}
+.enrol-price-sub{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(22,30,46,0.5);margin-top:4px;}
+.spots-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.spots-text{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(22,30,46,0.7);}
+.spots-track{height:4px;background:rgba(22,30,46,0.15);flex:1;margin:0 16px;}
+.spots-fill{height:100%;background:#161E2E;width:33%;}
+.enrol-note{font-size:12px;color:rgba(22,30,46,0.55);margin-top:10px;font-style:italic;}
+.btn-dark{background:#161E2E;color:#C9A96E;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:background .2s;width:100%;text-align:center;}
+.btn-dark:hover{background:#0A1020;}
+
+/* INSTRUCTOR */
+.instructor{padding:64px 32px;background:#222B3E;border-bottom:1px solid rgba(201,169,110,0.08);}
+.instructor-card{background:#1C2333;border-top:2px solid #C9A96E;padding:40px 36px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+.instructor-img{width:100%;aspect-ratio:3/4;background:#161E2E;overflow:hidden;margin-bottom:16px;display:flex;align-items:center;justify-content:center;}
+.instructor-initial{font-family:'Bebas Neue',sans-serif;font-size:96px;color:rgba(201,169,110,0.15);}
+.instructor-social a{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,238,232,0.35);text-decoration:none;border:1px solid rgba(240,238,232,0.1);padding:5px 10px;margin-right:6px;}
+.instructor-social a:hover{color:#C9A96E;border-color:rgba(201,169,110,0.35);}
+.instructor-role{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C9A96E;margin-bottom:10px;}
+.instructor-name{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.92;color:#F0EEE8;margin-bottom:6px;}
+.instructor-uni{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;color:rgba(240,238,232,0.4);margin-bottom:24px;}
+.instructor-bio{font-size:14px;line-height:1.8;color:rgba(240,238,232,0.55);}
+.instructor-bio p+p{margin-top:12px;}
+.instructor-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;}
+.instructor-tag{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,238,232,0.3);border:1px solid rgba(240,238,232,0.1);padding:4px 10px;}
+
+/* TIMELINE */
+.timeline{padding:64px 32px;background:#1C2333;border-bottom:1px solid rgba(201,169,110,0.08);}
+.timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px;}
+.tl-item{background:#222B3E;padding:28px 24px;border-top:2px solid rgba(201,169,110,0.1);position:relative;}
+.tl-item.active{border-top-color:#C9A96E;}
+.tl-step{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(201,169,110,0.1);line-height:1;margin-bottom:14px;}
+.tl-item.active .tl-step{color:rgba(201,169,110,0.25);}
+.tl-title{font-size:13px;font-weight:600;color:#F0EEE8;margin-bottom:6px;letter-spacing:.02em;}
+.tl-desc{font-size:12px;line-height:1.65;color:rgba(240,238,232,0.38);}
+.tl-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#C9A96E;color:#161E2E;padding:3px 8px;margin-bottom:10px;}
+
+/* RESULTS */
+.results{padding:64px 32px;background:#161E2E;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;}
+.rcard{background:#1C2333;padding:28px 24px;border-top:2px solid rgba(201,169,110,0.12);transition:border-top-color .2s;}
+.rcard:hover{border-top-color:#C9A96E;}
+.rcard-award{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C9A96E;margin-bottom:8px;opacity:.9;}
+.rcard-student{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1;color:#F0EEE8;margin-bottom:4px;}
+.rcard-school{font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;color:rgba(240,238,232,0.4);margin-bottom:10px;}
+.rcard-detail{font-size:12px;line-height:1.6;color:rgba(240,238,232,0.3);}
+
+/* TESTIMONIALS */
+.testi{padding:64px 32px;background:#222B3E;}
+.testi-title{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:.95;color:#F0EEE8;margin-bottom:32px;}
+.testi-title em{font-family:'DM Serif Display',serif;font-style:italic;color:#C9A96E;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.tcard{background:#1C2333;padding:28px 24px;border-top:2px solid rgba(201,169,110,0.1);}
+.tcard:hover{border-top-color:#C9A96E;}
+.tquote{font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;line-height:1.7;color:rgba(240,238,232,0.6);margin-bottom:16px;}
+.tauthor{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#C9A96E;}
+.trole{font-size:11px;color:rgba(240,238,232,0.28);margin-top:3px;}
+
+/* BOTTOM CTA */
+.bcta{padding:64px 32px;background:#C9A96E;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+.bcta .slabel{color:rgba(22,30,46,0.55);}
+.bcta .slabel::before{background:rgba(22,30,46,0.35);}
+.bcta-title{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:.88;color:#161E2E;}
+.bcta-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;color:rgba(22,30,46,0.6);margin-top:8px;}
+.bcta-right{display:flex;flex-direction:column;gap:8px;min-width:260px;}
+
+/* FOOTER */
+.footer{background:#0E1525;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(201,169,110,0.1);}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.12em;color:#F0EEE8;}
+.footer-logo span{color:#C9A96E;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,238,232,0.28);text-decoration:none;}
+.footer-links a:hover{color:#C9A96E;}
+.footer-copy{font-size:11px;color:rgba(240,238,232,0.2);letter-spacing:.04em;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,15,30,0.88);z-index:200;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
+.modal-overlay.open{display:flex;}
+.modal{background:#222B3E;border-top:3px solid #C9A96E;padding:40px;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto;}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;cursor:pointer;color:rgba(240,238,232,0.3);font-size:18px;line-height:1;transition:color .15s;}
+.modal-close:hover{color:#C9A96E;}
+.modal-eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#C9A96E;margin-bottom:8px;}
+.modal h2{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:.95;color:#F0EEE8;margin-bottom:6px;}
+.modal-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,238,232,0.4);margin-bottom:28px;line-height:1.6;}
+.form-group{margin-bottom:14px;}
+.form-label{display:block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,238,232,0.45);margin-bottom:6px;}
+.form-input{width:100%;background:#1C2333;border:1px solid rgba(201,169,110,0.15);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:#F0EEE8;outline:none;transition:border-color .2s;appearance:none;}
+.form-input:focus{border-color:#C9A96E;}
+.form-input::placeholder{color:rgba(240,238,232,0.2);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modal-submit{width:100%;padding:14px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;justify-content:center;margin-top:8px;cursor:pointer;background:#C9A96E;color:#161E2E;border:none;transition:background .2s;}
+.modal-submit:hover{background:#B8924F;}
+.modal-note{font-size:11px;color:rgba(240,238,232,0.28);text-align:center;margin-top:10px;font-style:italic;}
+.modal-success{display:none;text-align:center;padding:32px 0;}
+.modal-success.show{display:block;}
+.modal-success .symbol{font-family:'Bebas Neue',sans-serif;font-size:72px;color:#C9A96E;display:block;line-height:1;margin-bottom:12px;}
+.modal-success h3{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#F0EEE8;margin-bottom:8px;}
+.modal-success p{font-family:'DM Serif Display',serif;font-style:italic;font-size:15px;color:rgba(240,238,232,0.45);line-height:1.6;}
+
+@media(max-width:900px){
+  .hero-h1{font-size:64px;}
+  .about-grid,.curriculum-header,.enrol-band,.instructor-card,.bcta{grid-template-columns:1fr;}
+  .sessions-grid,.timeline-grid,.results-grid,.testi-grid{grid-template-columns:1fr 1fr;}
+  .stats{grid-template-columns:1fr 1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .sessions-grid,.timeline-grid,.results-grid,.testi-grid,.stats{grid-template-columns:1fr;}
+  .hero-h1{font-size:52px;}
+  .hero-h2{font-size:32px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="#" class="nav-logo">ARITON <span>SCHOOL</span></a>
+  <ul class="nav-links">
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#instructor">Instructor</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#enrol">Enrol</a></li>
+    <li><a href="/">EDU</a></li>
+    <li><a href="/consulting">Consulting</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="openModal(); return false;">Apply Now</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg">IPO</div>
+  <div class="hero-tag">Now enrolling · Cohort 1</div>
+  <div class="hero-h1">INTERNATIONAL<br>PHILOSOPHY<br><span class="gold">OLYMPIAD</span></div>
+  <div class="hero-h2">PREPARATION PROGRAMME</div>
+  <p class="hero-sub">12 live sessions with an Oxford-trained philosopher. Max 6 students. Grades 8–12.</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-primary" onclick="openModal(); return false;">Apply for Cohort 1</a>
+    <a href="#curriculum" class="btn-outline">See curriculum</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-n">12</div>
+    <div class="stat-l">Live sessions</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">24H</div>
+    <div class="stat-l">Total instruction</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">6</div>
+    <div class="stat-l">Max students</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">60+</div>
+    <div class="stat-l">Countries compete</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="slabel">The competition</div>
+      <div class="about-title">WHAT IS<br>THE <em>IPO?</em></div>
+      <div class="about-body">
+        <p>The International Philosophy Olympiad is an annual global competition where students write original philosophical essays and defend their ideas before an international jury. Over 60 countries compete. It is one of the most intellectually demanding competitions a high school student can enter.</p>
+        <p>Students receive four philosophical quotations on the day of the competition and choose one as the starting point for an original essay — written without reference materials, judged on argumentative rigour, precision, and genuine philosophical thinking.</p>
+        <p>Top essays advance to an oral defence before the international jury. Gold, silver, and bronze medals are awarded. IPO recognition carries real weight with university admissions teams worldwide, particularly for PPE, philosophy, law, and humanities programmes.</p>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-quote">"The IPO rewards students who can think independently, argue precisely, and engage seriously with ideas — not those who have simply memorised more philosophy."</div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Founded</span><span class="about-detail-val">1993, under UNESCO auspices</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Frequency</span><span class="about-detail-val">Annual · May–June</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Eligibility</span><span class="about-detail-val">Grades 8–12 / under 20</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Format</span><span class="about-detail-val">Essay + oral defence</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Languages</span><span class="about-detail-val">EN / FR / DE / ES</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Countries</span><span class="about-detail-val">60+</span></div>
+      <div class="about-detail-row"><span class="about-detail-lbl">Investment</span><span class="about-detail-val accent">$1,560 USD · full programme</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CURRICULUM -->
+<div class="curriculum" id="curriculum">
+  <div class="curriculum-header">
+    <div>
+      <div class="slabel">12 sessions · 24 hours</div>
+      <div class="curriculum-title">THE<br>CURRICULUM</div>
+    </div>
+    <div class="curriculum-intro">
+      Sessions are Socratic — expect to think out loud, be challenged, and sharpen your reasoning in real time. No passive listening. Every session builds directly toward competition-level performance.
+    </div>
+  </div>
+  <div class="sessions-grid">
+    <div class="session">
+      <div class="session-num">01</div>
+      <div class="session-title">What is philosophy?</div>
+      <div class="session-desc">Orientation, IPO structure, and what the jury is actually looking for.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">02</div>
+      <div class="session-title">Argument & logic</div>
+      <div class="session-desc">Building valid arguments, identifying fallacies, and structuring claims.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">03</div>
+      <div class="session-title">Epistemology</div>
+      <div class="session-desc">Knowledge, justification, scepticism — the theory of what we can know.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">04</div>
+      <div class="session-title">Ethics</div>
+      <div class="session-desc">Moral frameworks, dilemmas, and competing ethical traditions.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">05</div>
+      <div class="session-title">Metaphysics</div>
+      <div class="session-desc">Identity, time, existence, free will, and the nature of reality.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">06</div>
+      <div class="session-title">Political philosophy</div>
+      <div class="session-desc">Justice, authority, rights, and the grounds of political obligation.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">07</div>
+      <div class="session-title">Philosophy of mind</div>
+      <div class="session-desc">Consciousness, personal identity, and the mind-body problem.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">08</div>
+      <div class="session-title">Essay workshop I</div>
+      <div class="session-desc">Structuring a philosophical argument from a competition quotation.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">09</div>
+      <div class="session-title">Peer critique</div>
+      <div class="session-desc">Live essay review and revision — sharp feedback, no softening.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">10</div>
+      <div class="session-title">Past IPO prompts</div>
+      <div class="session-desc">Analysis of real competition quotations from 2019–2024.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">11</div>
+      <div class="session-title">Mock oral defence</div>
+      <div class="session-desc">Simulate the jury presentation and learn to defend under questioning.</div>
+    </div>
+    <div class="session">
+      <div class="session-num">12</div>
+      <div class="session-title">Competition strategy</div>
+      <div class="session-desc">Final essays, timing tactics, and what to do on competition day.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ENROL BAND -->
+<div class="enrol-band" id="enrol">
+  <div class="enrol-band-left">
+    <div class="slabel">Cohort 1 · Now open</div>
+    <div class="enrol-title">SECURE<br>YOUR<br>SPOT.</div>
+    <p class="enrol-sub">No payment today. We confirm your place and send a secure payment link directly.</p>
+    <ul class="enrol-list">
+      <li>12 live sessions</li>
+      <li>24 hours total</li>
+      <li>Max 6 students</li>
+      <li>Grades 8–12</li>
+      <li>English language</li>
+      <li>Online · global</li>
+    </ul>
+  </div>
+  <div class="enrol-band-right">
+    <div class="enrol-price-block">
+      <div class="enrol-price">$1,560</div>
+      <div class="enrol-price-sub">Per student · full programme</div>
+    </div>
+    <div class="spots-row">
+      <span class="spots-text">2 of 6 spots filled</span>
+      <div class="spots-track"><div class="spots-fill"></div></div>
+      <span class="spots-text">4 left</span>
+    </div>
+    <button class="btn-dark" onclick="openModal()">Apply for Cohort 1</button>
+    <p class="enrol-note">No payment today. We'll be in touch within 1–2 business days.</p>
+  </div>
+</div>
+
+<!-- INSTRUCTOR -->
+<div class="instructor" id="instructor">
+  <div class="slabel">Your instructor</div>
+  <div class="instructor-card">
+    <div>
+      <div class="instructor-img">
+        <div class="instructor-initial">M</div>
+      </div>
+      <div class="instructor-social">
+        <a href="#">Oxford</a>
+        <a href="#">Philosophy</a>
+      </div>
+    </div>
+    <div>
+      <div class="instructor-role">IPO Instructor · Cohort 1</div>
+      <div class="instructor-name">MATT</div>
+      <div class="instructor-uni">BA & MS Philosophy · University of Oxford</div>
+      <div class="instructor-bio">
+        <p>Matt completed both his undergraduate and postgraduate degrees in Philosophy at the University of Oxford, where he specialised in ethics, epistemology, and philosophy of language. He has an exceptional ability to translate rigorous academic philosophy into competition-ready thinking for ambitious young students.</p>
+        <p>He has coached students across Asia in academic philosophy competitions. His approach is Socratic — sessions are demanding, direct, and built around making students think rather than memorise. Every student who completes the programme leaves a sharper, more precise thinker.</p>
+      </div>
+      <div class="instructor-tags">
+        <span class="instructor-tag">Ethics</span>
+        <span class="instructor-tag">Epistemology</span>
+        <span class="instructor-tag">Philosophy of Language</span>
+        <span class="instructor-tag">University of Oxford</span>
+        <span class="instructor-tag">Competition Coaching</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="timeline" id="how">
+  <div class="slabel">The process</div>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:.95;color:#F0EEE8;margin-bottom:2px;">HOW IT WORKS</div>
+  <div class="timeline-grid" style="margin-top:16px;">
+    <div class="tl-item active">
+      <div class="tl-tag">Now open</div>
+      <div class="tl-step">01</div>
+      <div class="tl-title">Apply</div>
+      <div class="tl-desc">Submit a short application. No payment today — just your details and a brief note about your interest.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-step">02</div>
+      <div class="tl-title">We confirm</div>
+      <div class="tl-desc">We review and reach out within 1–2 business days to confirm your place in Cohort 1.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-step">03</div>
+      <div class="tl-title">Payment</div>
+      <div class="tl-desc">We send a secure Stripe payment link. $1,560 USD for the full 12-session programme.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-step">04</div>
+      <div class="tl-title">Start learning</div>
+      <div class="tl-desc">Sessions begin. Live, Socratic, and built for competition performance. Show up ready to think.</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results" id="results">
+  <div class="slabel">Ariton School students</div>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:.95;color:#F0EEE8;margin-bottom:2px;">OUR <span style="color:#C9A96E;">RESULTS</span></div>
+  <div class="results-grid" style="margin-top:16px;">
+    <div class="rcard">
+      <div class="rcard-award">Placeholder · 1st Place</div>
+      <div class="rcard-student">STUDENT NAME</div>
+      <div class="rcard-school">School Name · Country</div>
+      <div class="rcard-detail">Essay title / topic — replace with real result</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-award">Placeholder · Distinguished</div>
+      <div class="rcard-student">STUDENT NAME</div>
+      <div class="rcard-school">School Name · Country</div>
+      <div class="rcard-detail">Category and year — replace with real result</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-award">Want to be here?</div>
+      <div class="rcard-student">YOUR NAME</div>
+      <div class="rcard-school">Your School · Your Country</div>
+      <div class="rcard-detail">Applications for Cohort 1 are open now.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi">
+  <div class="slabel">What they say</div>
+  <div class="testi-title">STUDENT <em>RESULTS.</em></div>
+  <div class="testi-grid">
+    <div class="tcard">
+      <p class="tquote">"Ariton completely changed how I approached my research paper. I went from a vague idea to winning a national competition in four months."</p>
+      <div class="tauthor">Kim J.H.</div>
+      <div class="trole">Seoul National University, Class of 2024</div>
+    </div>
+    <div class="tcard">
+      <p class="tquote">"The sessions felt more like working with a strategist. My thinking stood out because it was actually rigorous, not just well-written."</p>
+      <div class="tauthor">Park S.Y.</div>
+      <div class="trole">London School of Economics</div>
+    </div>
+    <div class="tcard">
+      <p class="tquote">"I'd been preparing for Oxford for two years. Ariton helped me see exactly what was missing in my thinking. I got the offer three months later."</p>
+      <div class="tauthor">Lee M.</div>
+      <div class="trole">University of Oxford, PPE</div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bcta">
+  <div>
+    <div class="slabel">Start here</div>
+    <div class="bcta-title">YOUR<br>NEXT<br>MOVE.</div>
+    <p class="bcta-sub">4 spots remaining in Cohort 1. No payment today.</p>
+  </div>
+  <div class="bcta-right">
+    <button class="btn-dark" onclick="openModal()" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;">Apply for IPO Cohort 1 →</button>
+    <a href="mailto:admin@ariton-edu.com" class="btn-outline" style="text-align:center;border-color:rgba(22,30,46,0.3);color:rgba(22,30,46,0.7);">Contact us →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <a href="/" style="text-decoration:none;"><div class="footer-logo">ARITON <span>SCHOOL</span></div></a>
+  <ul class="footer-links">
+    <li><a href="/">Home (EDU)</a></li>
+    <li><a href="/consulting">Consulting</a></li>
+    <li><a href="mailto:admin@ariton-edu.com">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Ariton Global Inc. · Seoul · Singapore</p>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-form-wrap">
+      <div class="modal-eyebrow">IPO Preparation · Cohort 1</div>
+      <h2>APPLY<br>NOW.</h2>
+      <p class="modal-sub">No payment today — we'll confirm your place and send a secure payment link.</p>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First name</label><input type="text" class="form-input" placeholder="Soyeon" /></div>
+        <div class="form-group"><label class="form-label">Last name</label><input type="text" class="form-input" placeholder="Kim" /></div>
+      </div>
+      <div class="form-group"><label class="form-label">Parent / guardian email</label><input type="email" class="form-input" placeholder="parent@email.com" /></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Current grade</label>
+          <select class="form-input"><option value="">Select</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Country</label><input type="text" class="form-input" placeholder="South Korea" /></div>
+      </div>
+      <div class="form-group"><label class="form-label">Why the IPO? <span style="opacity:.5;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <textarea class="form-input" rows="3" placeholder="A brief note helps us prepare..." style="resize:none;line-height:1.6;"></textarea>
+      </div>
+      <button class="modal-submit" onclick="submitForm()">Submit application →</button>
+      <p class="modal-note">We respond within 1–2 business days.</p>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <span class="symbol">✦</span>
+      <h3>RECEIVED.</h3>
+      <p>We'll be in touch within 1–2 business days to confirm your place and next steps.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+  function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+  function submitForm(){document.getElementById('modal-form-wrap').style.display='none';document.getElementById('modal-success').classList.add('show');}
+  document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+</script>
+</body>
+</html>
